@@ -1,2 +1,4 @@
 # Sync.err
- Track errors on your website/app. 
+
+          Tool for tracking error's on your website/app and improve development experience :)
+          More info soon!
