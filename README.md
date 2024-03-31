@@ -4,13 +4,13 @@
 
 Sync.err is a cutting-edge tool designed to enhance the development experience by tracking errors in real-time on your website or application. It offers immediate insights into potential issues, helping prevent them from affecting end-users. With a suite of features aimed at improving error resolution efficiency, Sync.err streamlines the development workflow and fosters a more proactive approach to quality assurance. More information coming soon!
 
-## Features
+## Features todo list
 
-### Real-Time Error Tracking
+### Real-Time Error Tracking - in progress
 
 Automatically detects and logs errors as they occur in the application, providing immediate insights into potential issues before they impact end-users.
 
-### Statistics Dashboard
+### Statistics Dashboard - in progress
 
 Features an interactive dashboard that showcases key performance indicators (KPIs) like error frequency, average resolution time, and error distribution by application modules, facilitating quick identification of focus areas.
 
