@@ -1,4 +1,5 @@
 import "./App.css";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Dashboard />
     </>
   );
 }
