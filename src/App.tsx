@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import LogIn from "./components/LogIn";
+import LogIn from "./components/login/LogIn";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
