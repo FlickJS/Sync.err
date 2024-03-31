@@ -1,24 +1,25 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Sync.err</h1>
-      <div className="card">
-        <p>
-          Tool for tracking error's on your website/app and improve development
-          experience :)
-        </p>
+        <div className="login__panel flex justify-center">
+          <div className="login__form p-10 h-screen flex items-center justify-center w-1/4">
+            <form className="flex-1 flex flex-col">
+              <label>Login:</label>
+              <input type="text" className="mt-2"></input>
+              <label>Password:</label>
+              <input type="password" className="mt-2"></input>
+              <button type="submit" className="mt-4">
+                Log in
+              </button>
+              <a className="text-white text-center pt-4 cursor-pointer">
+                Lost password?
+              </a>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );
