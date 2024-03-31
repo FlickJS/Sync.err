@@ -1,5 +1,5 @@
 import React from "react";
-import StaticDataChart from "../components/charts/StaticDataChart";
+import StaticDataChart from "../charts/StaticDataChart";
 
 const App: React.FC = () => {
   const staticData = [
