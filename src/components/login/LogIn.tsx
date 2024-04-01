@@ -24,7 +24,7 @@ const LogIn = ({
   };
 
   return (
-    <div className="login__panel flex justify-center">
+    <div className="main__container flex justify-center">
       <div className="login__form p-10 h-screen flex items-center justify-center w-1/4">
         <form className="flex-1 flex flex-col" onSubmit={handleSubmit}>
           <label>Login:</label>

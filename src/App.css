@@ -5,8 +5,14 @@
   background-color: white;
 }
 
-.login__panel {
+.main__container {
   width: 100%;
   background-color: rgb(31, 28, 28);
   height: 100%;
+}
+
+table,
+th,
+td {
+  border: 2px solid white;
 }

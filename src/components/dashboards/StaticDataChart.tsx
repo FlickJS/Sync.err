@@ -1,24 +1,24 @@
 import React, { useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
 
-interface StaticData {
+interface ErrorData {
   [year: string]: {
     [month: string]: {
-      [day: string]: number;
+      [day: string]: string[];
     };
   };
 }
 
-const StaticDataChart: React.FC<{ data: StaticData[] }> = ({ data }) => {
+const StaticDataChart: React.FC<{ data: ErrorData[] }> = ({ data }) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const processedData = data.flatMap((object) =>
       Object.entries(object).flatMap(([year, months]) =>
         Object.entries(months).flatMap(([month, days]) =>
-          Object.entries(days).map(([day, value]) => ({
+          Object.entries(days).map(([day, errors]) => ({
             date: `${day}.${month}.${year}`,
-            value,
+            value: errors.length,
           }))
         )
       )
@@ -38,9 +38,10 @@ const StaticDataChart: React.FC<{ data: StaticData[] }> = ({ data }) => {
     };
 
     const config = {
-      type: "bar",
+      type: "line",
       data: chartData,
       options: {
+        responsive: true,
         scales: {
           y: {
             beginAtZero: true,
@@ -49,15 +50,17 @@ const StaticDataChart: React.FC<{ data: StaticData[] }> = ({ data }) => {
       },
     };
 
-    const myChart = new Chart(chartRef.current.getContext("2d"), config);
+    if (chartRef.current) {
+      const myChart = new Chart(chartRef.current.getContext("2d"), config);
 
-    return () => {
-      myChart.destroy();
-    };
+      return () => {
+        myChart.destroy();
+      };
+    }
   }, [data]);
 
   return (
-    <div style={{ width: "800px" }}>
+    <div style={{ width: "800px" }} className="pb-6">
       <canvas ref={chartRef}></canvas>
     </div>
   );
