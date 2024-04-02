@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Filter from "../filters/Filter";
+
 interface ErrorData {
   [year: string]: {
     [month: string]: {
@@ -14,23 +17,30 @@ interface LatestErrorsTableProps {
 }
 
 const LatestErrorsTable: React.FC<LatestErrorsTableProps> = ({ data }) => {
-  const errorsList = data.flatMap((object) =>
-    Object.entries(object).flatMap(([year, months]) =>
-      Object.entries(months).flatMap(([month, days]) =>
-        Object.entries(days).flatMap(([day, errors]) =>
-          errors.map((error) => ({
-            date: `${year}-${month}-${day}`,
-            message: error.message,
-            url: error.url,
-          }))
+  const [showCount, setShowCount] = useState<number>(10);
+  const handleChangeShowCount = (value: number) => {
+    setShowCount(value);
+  };
+  const errorsList = data
+    .flatMap((object) =>
+      Object.entries(object).flatMap(([year, months]) =>
+        Object.entries(months).flatMap(([month, days]) =>
+          Object.entries(days).flatMap(([day, errors]) =>
+            errors.map((error) => ({
+              date: `${year}-${month}-${day}`,
+              message: error.message,
+              url: error.url,
+            }))
+          )
         )
       )
     )
-  );
+    .slice(0, showCount);
 
   return (
     <div>
       <h2 className="text-center text-3xl pb-2">Latest Errors</h2>
+      <Filter onChange={handleChangeShowCount} />
       <table className="border-spacing-3">
         <thead>
           <tr>
