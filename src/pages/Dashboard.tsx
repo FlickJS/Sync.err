@@ -2,7 +2,7 @@ import React from "react";
 import StaticDataChart from "../components/dashboards/StaticDataChart";
 import LatestErrorsTable from "../components/dashboards/LatestErrorsTable";
 
-const App: React.FC = () => {
+const Dashboard: React.FC = () => {
   const staticData = [
     {
       "2024": {
@@ -78,4 +78,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Dashboard;
