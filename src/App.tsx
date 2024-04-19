@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import LogIn from "./components/login/LogIn";
 import Profiles from "./pages/Profiles";
+import Header from "./components/header/Header";
 
 interface User {
   login: string;
@@ -18,11 +19,11 @@ const users = [
     password: "admin",
     websites: [
       {
-        name: "facebook",
+        name: "Facebook",
         icon: "/facebook.png",
       },
       {
-        name: "X",
+        name: "X/ex-Twitter",
         icon: "/x.jpg",
       },
     ],
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <>
+      <Header />
       {!isLogged ? (
         <LogIn onLogin={handleLogin} />
       ) : (

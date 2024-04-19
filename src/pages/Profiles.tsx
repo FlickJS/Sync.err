@@ -1,4 +1,5 @@
 import React from "react";
+import LoginButtons from "../components/utils/LoginButtons";
 
 interface User {
   login: string;
@@ -13,24 +14,15 @@ interface ProfilesProps {
   customerInfo: User;
 }
 
-const Profiles: React.FC<ProfilesProps> = ({ customerInfo: User }) => {
+const Profiles: React.FC<ProfilesProps> = ({ customerInfo }) => {
   return (
-    <div className="main__container flex flex-col justify-center flex-center items-center">
-      <div>Choose website/app</div>
-      {customerInfo &&
-        customerInfo.websites.map((website, index) => (
-          <div
-            key={index}
-            style={{ margin: "10px", display: "flex", alignItems: "center" }}
-          >
-            <img
-              src={website.icon}
-              alt={website.name}
-              style={{ width: "30px", marginRight: "10px" }}
-            />
-            <div>{website.name}</div>
-          </div>
+    <div className="main__container flex flex-col justify-center items-center">
+      <h2 className="pb-8 text-5xl	font-bold">Choose website/app</h2>
+      <div className="flex flex-row">
+        {customerInfo.websites.map((website, index) => (
+          <LoginButtons key={index} website={website} />
         ))}
+      </div>
     </div>
   );
 };
