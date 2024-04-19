@@ -27,17 +27,21 @@ const LogIn = ({
     <div className="main__container flex justify-center">
       <div className="login__form p-10 h-screen flex items-center justify-center w-1/4">
         <form className="flex-1 flex flex-col" onSubmit={handleSubmit}>
-          <label>Login:</label>
+          <label className="font-bold">Login:</label>
           <input
             name="username"
             type="text"
-            className={`mt-2 ${authError ? "border-red-500 border" : ""}`}
+            className={`mt-2 bg-slate-50 ${
+              authError ? "border-red-500 border" : ""
+            }`}
           />
-          <label>Password:</label>
+          <label className="font-bold">Password:</label>
           <input
             name="password"
             type="password"
-            className={`mt-2 ${authError ? "border-red-500 border" : ""}`}
+            className={`mt-2  bg-slate-50 ${
+              authError ? "border-red-500 border" : ""
+            }`}
           />
           {authError && (
             <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
@@ -47,10 +51,7 @@ const LogIn = ({
           <button type="submit" className="mt-4">
             Log in
           </button>
-          <a
-            href="#lost-password"
-            className="text-white text-center pt-4 cursor-pointer"
-          >
+          <a href="#lost-password" className=" text-center pt-4 cursor-pointer">
             Lost password?
           </a>
           <span className="pt-1 text-center text-xs">Static admin/admin</span>
